@@ -11,6 +11,47 @@ Juan Gabriel González Romero
 
 ---
 ## 1-Realiza unha consulta "dig danielcastelao.org" e identific cada parte da resposta (IN, CNAME, A, QUERY SECTION, ANSWER SECTION, AUTHORITY SECTION, etc)
+
+### Header:
+``` 
+; <<>> DiG 9.18.28-0ubuntu0.22.04.1-Ubuntu <<>> danielcastelao.org
+;; global options: +cmd
+```
+### Answer:
+```
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 32604
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+```
+### OPT:
+```
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+```
+
+### QUESTION SECTION:
+```
+;; QUESTION SECTION:
+;danielcastelao.org.		IN	A
+```
+
+
+### ANSWER SECTION:
+```
+;; ANSWER SECTION:
+danielcastelao.org.	77	IN	A	178.211.133.37
+```
+
+
+### Información de la consulta:
+```
+;; Query time: 22 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Tue Oct 08 20:08:27 CEST 2024
+;; MSG SIZE  rcvd: 63
+```
+
+
 ---
 ## 2-Realiza consutas dos seguintes nomes e identifica as diferencias: moodle.danielcastelao.org , www.danielcastelao.org  
 ---
