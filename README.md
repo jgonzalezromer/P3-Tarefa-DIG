@@ -1,6 +1,8 @@
+ <h1>
 <p align=center>
- <h1>P3-Tarefa-DIG</h1>
+P3-Tarefa-DIG
 </p>
+</h1>
 
 ---
 ## 1-Realiza unha consulta "dig danielcastelao.org" e identific cada parte da resposta (IN, CNAME, A, QUERY SECTION, ANSWER SECTION, AUTHORITY SECTION, etc)
