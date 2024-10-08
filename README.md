@@ -10,7 +10,7 @@ Juan Gabriel González Romero
 </h3>
 
 ---
-## 1-Realiza unha consulta "dig danielcastelao.org" e identific cada parte da resposta (IN, CNAME, A, QUERY SECTION, ANSWER SECTION, AUTHORITY SECTION, etc)
+## 1-Realiza unha consulta "dig danielcastelao.org" e identifica cada parte da resposta (IN, CNAME, A, QUERY SECTION, ANSWER SECTION, AUTHORITY SECTION, etc)
 
 ### Header:
 ``` 
@@ -53,7 +53,16 @@ danielcastelao.org.	77	IN	A	178.211.133.37
 
 
 ---
-## 2-Realiza consutas dos seguintes nomes e identifica as diferencias: moodle.danielcastelao.org , www.danielcastelao.org  
+## 2-Realiza consultas dos seguintes nomes e identifica as diferencias: moodle.danielcastelao.org , www.danielcastelao.org 
+
+### `dig moodle.danielcastelao.org`
+```
+
+```
+
+### `dig www.danielcastelao,org`
+
+
 ---
 ## 3-Averigua o nome e IP dos servidores de DNS autoritativos de www.danielcastelao.org, por qué soen ser 2 servidores autoritativos?
 ---
