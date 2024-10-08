@@ -11,7 +11,30 @@ Juan Gabriel González Romero
 
 ---
 ## 1-Realiza unha consulta "dig danielcastelao.org" e identifica cada parte da resposta (IN, CNAME, A, QUERY SECTION, ANSWER SECTION, AUTHORITY SECTION, etc)
+### Terminal:
+```
+dig danielcastelao.org
 
+; <<>> DiG 9.18.28-0ubuntu0.22.04.1-Ubuntu <<>> danielcastelao.org
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 32604
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;danielcastelao.org.		IN	A
+
+;; ANSWER SECTION:
+danielcastelao.org.	77	IN	A	178.211.133.37
+
+;; Query time: 22 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Tue Oct 08 20:08:27 CEST 2024
+;; MSG SIZE  rcvd: 63
+
+```
 ### Header:
 ``` 
 ; <<>> DiG 9.18.28-0ubuntu0.22.04.1-Ubuntu <<>> danielcastelao.org
@@ -55,13 +78,57 @@ danielcastelao.org.	77	IN	A	178.211.133.37
 ---
 ## 2-Realiza consultas dos seguintes nomes e identifica as diferencias: moodle.danielcastelao.org , www.danielcastelao.org 
 
-### `dig moodle.danielcastelao.org`
+### Terminal moodle.danielcastelao.org
+```
+dig moodle.danielcastelao.org
+
+; <<>> DiG 9.18.28-0ubuntu0.22.04.1-Ubuntu <<>> moodle.danielcastelao.org
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 27061
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;moodle.danielcastelao.org.	IN	A
+
+;; AUTHORITY SECTION:
+danielcastelao.org.	300	IN	SOA	ns1.hover.com. dnsmaster.hover.com. 1720467415 1800 900 604800 300
+
+;; Query time: 296 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Tue Oct 08 20:41:46 CEST 2024
+;; MSG SIZE  rcvd: 113
+
+
 ```
 
+### Terminal www.danielcastelao.org
 ```
+dig www.danielcastelao.org
 
-### `dig www.danielcastelao,org`
+; <<>> DiG 9.18.28-0ubuntu0.22.04.1-Ubuntu <<>> www.danielcastelao.org
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 42314
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;www.danielcastelao.org.		IN	A
+
+;; ANSWER SECTION:
+www.danielcastelao.org.	900	IN	A	178.211.133.37
+
+;; Query time: 167 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+;; WHEN: Tue Oct 08 20:40:39 CEST 2024
+;; MSG SIZE  rcvd: 67
+
+
+```
 
 ---
 ## 3-Averigua o nome e IP dos servidores de DNS autoritativos de www.danielcastelao.org, por qué soen ser 2 servidores autoritativos?
