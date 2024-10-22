@@ -78,6 +78,7 @@ danielcastelao.org.	77	IN	A	178.211.133.37
 ---
 ## 2-Realiza consultas dos seguintes nomes e identifica as diferencias: moodle.danielcastelao.org , www.danielcastelao.org 
 
+A diferencia principal vese no apartado de `AUTHORITY SECTION` e `ANSWER SECTION`
 ### Terminal moodle.danielcastelao.org
 ```
 dig moodle.danielcastelao.org
@@ -132,10 +133,35 @@ www.danielcastelao.org.	900	IN	A	178.211.133.37
 
 ---
 ## 3-Averigua o nome e IP dos servidores de DNS autoritativos de www.danielcastelao.org, por qué soen ser 2 servidores autoritativos?
+Soen ser dous servidores pola redundancia, balanceo de carga e resiliencia ante ataques.
+
+Para averiguar o nome da IP usaremos dous comandos relacionados entres sí, o primeiro será para saber cal é o nome:
+```
+dig ns danielcastelao.org
+
+danielcastelao.org. 900 IN NS ns2.hover.com.
+danielcastelao.org. 900 IN NS ns1.hover.com.
+```
+Con estes nomes utilizaremos o comando `dig A <nome_do_servidor>` para saber a ip:
+```
+ANSWER SECTION: ns2.hover.com. 6961 IN A 64.98.148.13
+ANSWER SECTION: ns1.hover.com. 7065 IN A 216.40.47.26
+```
+
+
+
 ---
 ## 4-Realiza as consultas de nomes inversas: 130.206.164.68 e de outras dúas IPs que se che ocorran.
+Para facer a consulta de nomes inversa utilizaremos o comando `dig -x <IP>`
+```
+68.164.206.130.in-addr.arpa. 7200 IN PTR pluto.tlm.unavarra.es.
+68.164.206.130.in-addr.arpa. 7200 IN PTR s164m68.unavarra.es.
+```
+
 ---
 ## 5-A qué servidor DNS estás consultando? Cómo o podes cambiar sen tocar os ficheiros de configuración do sistema?
+
+
 ---
 ## 6-Obtén o rexistro SOA (Start of Authority) do dominio  moodle.danielcastelao.org preguntándolle ó servidor DNS de google e logo preoguntándollo directamente ó servidor primario do dominio danielcastelao.org. 
 ---
