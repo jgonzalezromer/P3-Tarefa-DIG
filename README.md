@@ -157,7 +157,14 @@ Para facer a consulta de nomes inversa utilizaremos o comando `dig -x <IP>`
 68.164.206.130.in-addr.arpa. 7200 IN PTR pluto.tlm.unavarra.es.
 68.164.206.130.in-addr.arpa. 7200 IN PTR s164m68.unavarra.es.
 ```
+E as outras IPs poden ser:
+```
+dig -x 8.8.8.8
+8.8.8.8.in-addr.arpa. 86400 IN PTR dns.google.
 
+dig -x 1.1.1.1
+1.1.1.1.in-addr.arpa. 3600 IN PTR one.one.one.one.
+```
 ---
 ## 5-A qué servidor DNS estás consultando? Cómo o podes cambiar sen tocar os ficheiros de configuración do sistema?
 
