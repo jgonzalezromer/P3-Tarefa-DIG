@@ -212,10 +212,59 @@ O TTL máximo orixinal dun dominio é o valor definido polo propietario do domin
 Google usa múltiples servidores en diferentes localizacións xeográficas e redes para distribuír as solicitudes de usuarios. As IPs varían en función do servidor máis próximo ou dispoñible no momento da consulta.
 ---
 ## 11-Pregunta o mesmo a un server raiz (J.ROOTSERVERS.NET por exemplo) e comproba na resposta se o server acepta o modo recursivo
+
+Utilizamos o comando:
+```
+dig @j.root-servers.net www.google.es
+
+;; flags: qr rd; QUERY: 1, ANSWER: 0, AUTHORITY: 13, ADDITIONAL: 26
+```
+A bandeira rd (recursion desired) está presente na consulta polo tanto acepta modo recursivo.
 ---
 ## 12-Se queremos ver tóda-las queries que fai o servidor de DNS, qué opción temos que usar? averigua a IP de www.timesonline.co.uk, especifica os pasos dados
+Para ver todalas queries que fai o servidor faremos o comando:
+```
+dig +trace www.timesonline.co.uk
+
+<<>> DiG 9.18.28-0ubuntu0.22.04.1-Ubuntu <<>> +trace www.timesonline.co.uk
+;; global options: +cmd
+.			13397	IN	NS	l.root-servers.net.
+.			13397	IN	NS	b.root-servers.net.
+.			13397	IN	NS	e.root-servers.net.
+.			13397	IN	NS	h.root-servers.net.
+.			13397	IN	NS	d.root-servers.net.
+.			13397	IN	NS	i.root-servers.net.
+.			13397	IN	NS	f.root-servers.net.
+.			13397	IN	NS	c.root-servers.net.
+.			13397	IN	NS	g.root-servers.net.
+.			13397	IN	NS	k.root-servers.net.
+.			13397	IN	NS	m.root-servers.net.
+.			13397	IN	NS	j.root-servers.net.
+.			13397	IN	NS	a.root-servers.net.
+;; Received 239 bytes from 127.0.0.53#53(127.0.0.53) in 5 ms
+
+;; Received 50 bytes from 192.58.128.30#53(j.root-servers.net) in 2 ms
+
+
+```
+
 ---
 ## 13-Usando a información dispoñible a traveso do DNS especifica a máquina (nome e IP) ou máquinas que actúan como servers de correo do dominio danielcastelao.org
+Para isto utilizamos o comando:
+```
+dig +trace www.timesonline.co.uk
+
+danielcastelao.org. 900 IN MX 10 mx.hover.com.cust.hostedemail.com.
+```
+
 ---
 ## 14-Podes obter os rexistros AAAA de www.facebook.com? a qué corresponden?
+Para este último paso faremos:
+```
+dig AAAA www.facebook.com
+
+www.facebook.com. 60 IN AAAA 2a03:2880:f12f:83:face:b00c::25de
+
+```
+
 ---
