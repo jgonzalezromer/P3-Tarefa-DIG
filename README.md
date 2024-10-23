@@ -188,13 +188,28 @@ dig @ns1.hover.com SOA moodle.danielcastelao.org
 
 ---
 ## 7-Consulta a IP de www.elpais.com. Cánto tempo queda almaceado o rexistro de recurso no DNS local?, se preguntas ó DNS local por este recurso, qué observas no TTL do rexistro?
+Para consultar a IP faremos:
+```
+dig www.elpais.com
 
+;; QUESTION SECTION:
+;www.elpais.com. IN A
+
+;; ANSWER SECTION:
+www.elpais.com. 3600 IN A 23.202.46.103
+```
+Se lle preguntamos o DNS local daranos un TTL de 3600, o que quere dicir que almacenará a resposta durantee unha hora.
+```
+```
 ---
 ## 8-Busca o TTL de distintos nomes de dominio de servicios que escollas, a qué se poden deber as diferencias?
+Busquei o TTL de Google,Facebook e GitHub. Os cales son 300, 60, 3600 segundos respectivamente. Isto pode pasar xa que Facebook e Google son servizos dinámicos e GIthub é un servizo estático.
 ---
 ## 9-Determina o TTL máximo (original) dun nome de dominio.
+O TTL máximo orixinal dun dominio é o valor definido polo propietario do dominio no servidor DNS autoritativo.
 ---
 ## 10-Averigua cántas máquinas con distintas IPs están detrás do dominio web www.google.es, sempre son as mesmas e na mesma orde? por qué?
+Google usa múltiples servidores en diferentes localizacións xeográficas e redes para distribuír as solicitudes de usuarios. As IPs varían en función do servidor máis próximo ou dispoñible no momento da consulta.
 ---
 ## 11-Pregunta o mesmo a un server raiz (J.ROOTSERVERS.NET por exemplo) e comproba na resposta se o server acepta o modo recursivo
 ---
