@@ -167,12 +167,28 @@ dig -x 1.1.1.1
 ```
 ---
 ## 5-A qué servidor DNS estás consultando? Cómo o podes cambiar sen tocar os ficheiros de configuración do sistema?
-
-
+Está consultando a:
+```
+SERVER: 127.0.0.53#53(127.0.0.53) (UDP)
+```
+Podes cambiar o servidor DNS facendo o comando:
+```
+dig @<IP_do_servidor> danielcastelao.org
+```
 ---
 ## 6-Obtén o rexistro SOA (Start of Authority) do dominio  moodle.danielcastelao.org preguntándolle ó servidor DNS de google e logo preoguntándollo directamente ó servidor primario do dominio danielcastelao.org. 
+Para obter o rexistro SOA do primeiro paso faremos o comando:
+```
+dig @8.8.8.8 SOA moodle.danielcastelao.org
+```
+E para o segundo paso faremos o comando:
+```
+dig @ns1.hover.com SOA moodle.danielcastelao.org
+```
+
 ---
 ## 7-Consulta a IP de www.elpais.com. Cánto tempo queda almaceado o rexistro de recurso no DNS local?, se preguntas ó DNS local por este recurso, qué observas no TTL do rexistro?
+
 ---
 ## 8-Busca o TTL de distintos nomes de dominio de servicios que escollas, a qué se poden deber as diferencias?
 ---
